@@ -7,22 +7,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/styles.css">
     <title>Tour of Dom</title>
+    <style>
+        #fruits{
+            background-color: aqua;
+        }
+        .important-fruits{
+            color: darkcyan;
+        }
+        .place-container li{
+            color: hotpink;
+        }
+    </style>
 </head>
 
 <body>
     <header>
         <h1>Welcome to my DOM</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus ullam eaque ab nesciunt corporis consequatur in possimus ipsam animi perferendis!</p>
     </header>
     <main>
-        <h1>MY DOM Files</h1>
+        <section>
+            <h1>MY DOM Files</h1>
         <ul>
             <li>Jalali Set</li>
             <li>Mugz</li>
             <li>Deshi MCs</li>
+            <li>Skib Khan</li>
         </ul>
+        </section>
+        <section>
+            <h1 id="fruits">Fruis I Like</h1>
+            <ul>
+                <li class="important-fruits">mango</li>
+                <li class="important-fruits">orange</li>
+                <li class="important-fruits">banana</li>
+                <li>apple</li>
+            </ul>
+        </section>
+        <section class="place-container">
+            <h1>Places i like to visit</h1>
+            <ul>
+                <li>Chittagong</li>
+                <li>Dhaka</li>
+                <li>Saint Martin</li>
+                <li>Sajek</li>
+            </ul>
+        </section>
     </main>
 
     <script src="js/dom.js"></script>
+    <script>
+        const liCollection = document.getElementsByTagName('li');
+        for (const li of liCollection){
+            console.log(li.innerText);
+        }
+        const fruitCollection = document.getElementsByClassName('important-fruits');
+        // console.log(fruitCollection);
+        for (const fruit of fruitCollection){
+            console.log(fruit.innerText);
+        }
+        const fruitId = document.getElementById('fruits');
+        // console.log(fruitId)
+        fruitId.innerText = 'Changed by JS';
+        const someLi = document.querySelectorAll('.place-container li');
+        for (const liList of someLi){
+            console.log(liList.innerText)
+        }
+    </script>
 </body>
 
 </html>
